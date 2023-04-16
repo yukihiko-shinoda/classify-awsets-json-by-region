@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  classify-awsets-json-by-region:
+    build: .
+    volumes:
+      - ./input:/workspace/input
+      - ./intermediate:/workspace/intermediate
+      - ./output:/workspace/output

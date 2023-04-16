@@ -1,0 +1,580 @@
+[
+  {
+    "Account": "123456789012",
+    "Region": "ap-northeast-1",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ap-northeast-2",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ap-northeast-3",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ap-south-1",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ap-southeast-1",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ap-southeast-2",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ca-central-1",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "eu-central-1",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "eu-north-1",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "eu-west-1",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "eu-west-2",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "eu-west-3",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "sa-east-1",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "us-east-1",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "us-east-2",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "us-west-1",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "us-west-2",
+    "Id": "AwsDataCatalog",
+    "Version": "",
+    "Type": "athena/datacatalog",
+    "Name": "AwsDataCatalog",
+    "Attributes": {
+      "CatalogName": "AwsDataCatalog",
+      "Type": "GLUE"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ap-northeast-1",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:43.936Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 2",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ap-northeast-2",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:43.681Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 3",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ap-northeast-3",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:43.536Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 2",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ap-south-1",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:44.545Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 3",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ap-southeast-1",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:44.305Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 3",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ap-southeast-2",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:44.021Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 3",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "ca-central-1",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:44.882Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 3",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "eu-central-1",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:44.312Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 3",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "eu-north-1",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:44.623Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 3",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "eu-west-1",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:44.144Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 2",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "eu-west-2",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:44.585Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 3",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "eu-west-3",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:45.407Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 3",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "sa-east-1",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:44.936Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 3",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "us-east-1",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:44.331Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 2",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "us-east-2",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:43.885Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 3",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "us-west-1",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:44.716Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 3",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  },
+  {
+    "Account": "123456789012",
+    "Region": "us-west-2",
+    "Id": "primary",
+    "Version": "",
+    "Type": "athena/workgroup",
+    "Name": "primary",
+    "Attributes": {
+      "CreationTime": "2023-03-27T04:24:43.582Z",
+      "Description": "",
+      "EngineVersion": {
+        "EffectiveEngineVersion": "Athena engine version 2",
+        "SelectedEngineVersion": "AUTO"
+      },
+      "Name": "primary",
+      "State": "ENABLED"
+    },
+    "Tags": {},
+    "Relations": null
+  }
+]

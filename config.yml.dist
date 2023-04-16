@@ -1,0 +1,11 @@
+# List region ids to exclude from output
+region_exclude:
+  - ap-northeast-1
+# List ignore resource patterns to exclude from output
+ignore_pattern:
+  codedeploy/deploymentconfig:
+    # Maybe AWS managed resource because it can't be deleted.
+    - CodeDeployDefault.*
+  config/rule:
+    # Rules that some regions are not supported
+    - securityhub-*
