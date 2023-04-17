@@ -1,6 +1,7 @@
 # Classify AWSets JSON by Region
 
 [![Test](https://github.com/yukihiko-shinoda/classify-awsets-json-by-region/workflows/Test/badge.svg)](https://github.com/yukihiko-shinoda/classify-awsets-json-by-region/actions?query=workflow%3ATest)
+[![CodeQL](https://github.com/yukihiko-shinoda/classify-awsets-json-by-region/workflows/CodeQL/badge.svg)](https://github.com/yukihiko-shinoda/classify-awsets-json-by-region/actions?query=workflow%3ACodeQL)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d3006b43fedc1ffd5db7/test_coverage)](https://codeclimate.com/github/yukihiko-shinoda/classify-awsets-json-by-region/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d3006b43fedc1ffd5db7/maintainability)](https://codeclimate.com/github/yukihiko-shinoda/classify-awsets-json-by-region/maintainability)
 [![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/yukihiko-shinoda/classify-awsets-json-by-region)](https://codeclimate.com/github/yukihiko-shinoda/classify-awsets-json-by-region)
