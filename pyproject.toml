@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "classifyawsetsjsonbyregion"
-version = "0.1.0"
+version = "0.2.0"
 description = "Classifies AWSets JSON by region."
 readme = "README.md"
 requires-python = ">=3.7"
@@ -83,7 +83,7 @@ include = ["classifyawsetsjsonbyregion", "classifyawsetsjsonbyregion.*"]
 skips = ["tests/*"]
 
 [tool.bumpversion]
-current_version = "0.1.0"
+current_version = "0.2.0"
 commit = true
 tag = true
 
