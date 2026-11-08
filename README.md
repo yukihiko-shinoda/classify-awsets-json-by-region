@@ -2,9 +2,9 @@
 
 [![Test](https://github.com/yukihiko-shinoda/classify-awsets-json-by-region/workflows/Test/badge.svg)](https://github.com/yukihiko-shinoda/classify-awsets-json-by-region/actions?query=workflow%3ATest)
 [![CodeQL](https://github.com/yukihiko-shinoda/classify-awsets-json-by-region/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/yukihiko-shinoda/classify-awsets-json-by-region/actions/workflows/github-code-scanning/codeql)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/d3006b43fedc1ffd5db7/test_coverage)](https://codeclimate.com/github/yukihiko-shinoda/classify-awsets-json-by-region/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/d3006b43fedc1ffd5db7/maintainability)](https://codeclimate.com/github/yukihiko-shinoda/classify-awsets-json-by-region/maintainability)
-[![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/yukihiko-shinoda/classify-awsets-json-by-region)](https://codeclimate.com/github/yukihiko-shinoda/classify-awsets-json-by-region)
+[![Code Coverage](https://qlty.sh/gh/yukihiko-shinoda/projects/classify-awsets-json-by-region/coverage.svg)](https://qlty.sh/gh/yukihiko-shinoda/projects/classify-awsets-json-by-region)
+[![Maintainability](https://qlty.sh/gh/yukihiko-shinoda/projects/classify-awsets-json-by-region/maintainability.svg)](https://qlty.sh/gh/yukihiko-shinoda/projects/classify-awsets-json-by-region)
+[![Dependabot](https://flat.badgen.net/github/dependabot/yukihiko-shinoda/classify-awsets-json-by-region?icon=dependabot)](https://github.com/yukihiko-shinoda/classify-awsets-json-by-region/security/dependabot)
 [![Python versions](https://img.shields.io/pypi/pyversions/classifyawsetsjsonbyregion.svg)](https://pypi.org/project/classifyawsetsjsonbyregion)
 [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fyukihiko-shinoda%2Fclassify-awsets-json-by-region)](http://twitter.com/share?text=Classify%20AWSets%20JSON%20by%20Region&url=https://pypi.org/project/classifyawsetsjsonbyregion/&hashtags=python)
 
