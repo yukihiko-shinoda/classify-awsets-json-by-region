@@ -103,9 +103,6 @@ exclude_also = [
     "raise NotImplementedError",
 ]
 
-[tool.coverage.run]
-source = ["classifyawsetsjsonbyregion"]
-
 [tool.docformatter]
 recursive = true
 # For compatibility with Black
