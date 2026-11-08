@@ -1,21 +1,22 @@
+# SPDX-FileCopyrightText: Copyright (c) 2023 Yukihiko Shinoda
+# SPDX-License-Identifier: MIT
 """Configuration of pytest."""
 
 from __future__ import annotations
 
-from pathlib import Path
 import shutil
-from textwrap import dedent, indent
+from pathlib import Path
+from textwrap import dedent
+from textwrap import indent
 from typing import Generator
 
-from click.testing import CliRunner
 import pytest
+from click.testing import CliRunner
 
-collect_ignore = ["setup.py"]
 
-
-@pytest.fixture()
+@pytest.fixture
 def configured_cli_runner(tmp_path: Path, resource_path_root: Path) -> Generator[CliRunner, None, None]:
-    """Prepares CLI runner with configuration files in temporary directory."""
+    """Prepare CLI runner with configuration files in temporary directory."""
     config_yaml_dist = Path(__file__).parent.parent / "config.yml.dist"
     runner = CliRunner()
     with runner.isolated_filesystem(temp_dir=tmp_path) as temp_dir:
@@ -23,15 +24,11 @@ def configured_cli_runner(tmp_path: Path, resource_path_root: Path) -> Generator
         config_file_test = Path("config.yml")
         config_file_for_test = temp_path_dir / config_file_test
         shutil.copy(config_yaml_dist, config_file_for_test)
-        definition_exclude = indent(
-            dedent(
-                """\
+        ignore_pattern_athena_workgroup = dedent("""\
             athena/workgroup:
             - prim*
-            """,
-            ),
-            "  ",
-        )
+            """)
+        definition_exclude = indent(ignore_pattern_athena_workgroup, "  ")
         with config_file_for_test.open("a") as file:
             file.write(definition_exclude)
         awsets_json_file_test = Path("awsets.json")

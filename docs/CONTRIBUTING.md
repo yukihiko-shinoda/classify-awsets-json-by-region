@@ -57,10 +57,10 @@ Ready to contribute? Here's how to set up `Classify AWSets JSON by Region` for l
    git clone git@github.com:your_name_here/classify-awsets-json-by-region.git
    ```
 
-3. Install your local copy into a virtualenv. Assuming you have Pipenv installed, this is how you set up your fork for local development:
+3. Install your local copy into a virtualenv. Assuming you have [uv](https://docs.astral.sh/uv/) installed, this is how you set up your fork for local development:
 
    ```console
-   pipenv install --dev
+   uv sync
    ```
 
 4. Create a branch for local development:
@@ -72,14 +72,19 @@ Ready to contribute? Here's how to set up `Classify AWSets JSON by Region` for l
    Now you can make your changes locally.
 
 5. When you're done making changes,
-   check that your changes pass isort, flake8, black,
-   and the tests, including testing oldest Python version:
+   check that your changes pass all of the following checks,
+   which [Invoke Lint](https://github.com/yukihiko-shinoda/invoke-lint) runs:
+
+   - Formatting
+   - Linting
+   - Tests, including on the oldest supported Python version
 
    ```console
-   pipenv run inv style --check
-   pipenv run pytest
-   pipenv install --python 3.7
-   pipenv run pytest
+   uv run inv style --check
+   uv run inv lint
+   uv run inv lint.deep
+   uv run inv test
+   uv run --python 3.7 inv test
    ```
 
 6. Commit your changes and push your branch to GitHub:
@@ -106,7 +111,7 @@ Before you submit a pull request, check that it meets these guidelines:
 To run a subset of tests:
 
 ```console
-pipenv run pytest tests.test_classifyawsetsjsonbyregion
+uv run pytest tests/test_cli.py
 
 ```
 

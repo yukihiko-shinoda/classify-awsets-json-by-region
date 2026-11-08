@@ -1,10 +1,14 @@
+# SPDX-FileCopyrightText: Copyright (c) 2023 Yukihiko Shinoda
+# SPDX-License-Identifier: MIT
 """Analyze AWSets JSON."""
+
 from __future__ import annotations
 
 import json
 from typing import Any
 
-from classifyawsetsjsonbyregion.awsets import Awset, AwsetFilter
+from classifyawsetsjsonbyregion.awsets import Awset
+from classifyawsetsjsonbyregion.awsets import AwsetFilter
 from classifyawsetsjsonbyregion.awsregion.classifier import Classifier
 from classifyawsetsjsonbyregion.config import Config
 from classifyawsetsjsonbyregion.csv import OutputCsv

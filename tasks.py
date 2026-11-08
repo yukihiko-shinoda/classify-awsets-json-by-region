@@ -1,9 +1,17 @@
+# SPDX-FileCopyrightText: Copyright (c) 2023 Yukihiko Shinoda
+# SPDX-License-Identifier: MIT
 """Tasks for maintaining the project.
 
 Execute 'invoke --list' for guidance on using Invoke
 """
+
 from invoke import Collection
-from invokelint import _clean, dist, lint, path, style, test
+from invokelint import _clean
+from invokelint import dist
+from invokelint import lint
+from invokelint import path
+from invokelint import style
+from invokelint import test
 
 ns = Collection()
 ns.add_collection(_clean, name="clean")
