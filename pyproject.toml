@@ -51,6 +51,41 @@ dependencies = [
 [project.optional-dependencies]
 test = []
 
+[dependency-groups]
+dev = [
+    "autoflake",
+    "bandit",
+    "black",
+    "build",
+    "bump2version",
+    "cohesion",
+    "coverage",
+    # The dlint less than 0.14.0 limits max version of flake8.
+    "dlint>=0.14.0",
+    "docformatter[tomli]",
+    "dodgy",
+    "flake8",
+    # To use flake8 --radon-show-closures
+    "flake8-polyfill",
+    # Latest hacking depends on legacy version of flake8, and legacy hacking doesn't narrow flake8 version.
+    # When unpin hacking, it has possibility to install too legacy version of hacking.
+    'hacking>=5.0.0; python_version >= "3.8"',
+    "invokelint",
+    "isort",
+    "mypy",
+    "pydocstyle",
+    "pylint",
+    "pytest",
+    "pytest-resource-path",
+    'pyvelocity; python_version >= "3.9"',
+    "radon",
+    "ruff",
+    # Old semgrep for Python 3.7 provides only sdist, which requires semgrep-core binary to build.
+    'semgrep; python_version >= "3.8"',
+    "types-invoke",
+    "xenon",
+]
+
 [project.urls]
 homepage = "https://github.com/yukihiko-shinoda/classify-awsets-json-by-region"
 # documentation = "https://readthedocs.org"
