@@ -122,7 +122,7 @@ Make sure all your changes are committed.
 Then run:
 
 ```console
-bump2version patch # possible: major / minor / patch
+uv run bump-my-version bump patch # possible: major / minor / patch
 git push
 git push --tags
 ```

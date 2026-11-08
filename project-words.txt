@@ -1,4 +1,6 @@
 awset
 awsets
+bumpversion
 classifyawsetsjsonbyregion
 datacatalog
+pyproject

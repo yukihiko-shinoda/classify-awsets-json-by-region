@@ -57,7 +57,7 @@ test = []
 
 [dependency-groups]
 dev = [
-    "bump2version",
+    "bump-my-version",
     "invokelint[basic]>=0.23.0",
     "pytest-resource-path",
     "pyvelocity; python_version >= '3.9'",
@@ -81,6 +81,16 @@ include = ["classifyawsetsjsonbyregion", "classifyawsetsjsonbyregion.*"]
 
 [tool.bandit.assert_used]
 skips = ["tests/*"]
+
+[tool.bumpversion]
+current_version = "0.1.0"
+commit = true
+tag = true
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+search = 'version = "{current_version}"'
+replace = 'version = "{new_version}"'
 
 [tool.coverage.report]
 exclude_also = [
