@@ -1,4 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2023 Yukihiko Shinoda
+# SPDX-License-Identifier: MIT
 """Model of AWSets."""
+
 from __future__ import annotations
 
 import re

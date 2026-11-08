@@ -1,4 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2023 Yukihiko Shinoda
+# SPDX-License-Identifier: MIT
 """JSON per each regions."""
+
 from pathlib import Path
 
 

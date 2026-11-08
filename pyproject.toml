@@ -57,37 +57,10 @@ test = []
 
 [dependency-groups]
 dev = [
-    "autoflake",
-    "bandit",
-    "black",
-    "build",
     "bump2version",
-    "cohesion",
-    "coverage",
-    # The dlint less than 0.14.0 limits max version of flake8.
-    "dlint>=0.14.0",
-    "docformatter[tomli]",
-    "dodgy",
-    "flake8",
-    # To use flake8 --radon-show-closures
-    "flake8-polyfill",
-    # Latest hacking depends on legacy version of flake8, and legacy hacking doesn't narrow flake8 version.
-    # When unpin hacking, it has possibility to install too legacy version of hacking.
-    'hacking>=5.0.0; python_version >= "3.8"',
-    "invokelint",
-    "isort",
-    "mypy",
-    "pydocstyle",
-    "pylint",
-    "pytest",
+    "invokelint[basic]>=0.23.0",
     "pytest-resource-path",
-    'pyvelocity; python_version >= "3.9"',
-    "radon",
-    "ruff",
-    # Old semgrep for Python 3.7 provides only sdist, which requires semgrep-core binary to build.
-    'semgrep; python_version >= "3.8"',
-    "types-invoke",
-    "xenon",
+    "pyvelocity; python_version >= '3.9'",
 ]
 
 [project.urls]
@@ -107,18 +80,10 @@ where = ["."]
 include = ["classifyawsetsjsonbyregion", "classifyawsetsjsonbyregion.*"]
 
 [tool.bandit.assert_used]
-skips = [
-    "*_test.py",
-    "*/test_*.py",
-]
-
-# @see https://black.readthedocs.io/en/stable/pyproject_toml.html#configuration-format
-[tool.black]
-line-length = 119
+skips = ["tests/*"]
 
 [tool.coverage.report]
-exclude_lines = [
-    "pragma: no cover",
+exclude_also = [
     # Assume `if TYPE_CHECKING: ... else: ...` block is covered · Issue #831 · nedbat/coveragepy
     #   https://github.com/nedbat/coveragepy/issues/831#issuecomment-517778185
     "if TYPE_CHECKING:",
@@ -128,52 +93,68 @@ exclude_lines = [
     "raise NotImplementedError",
 ]
 
+[tool.coverage.run]
+source = ["classifyawsetsjsonbyregion"]
+
 [tool.docformatter]
 recursive = true
+# For compatibility with Black
+# - How to Configure docformatter — docformatter 1.7.5 documentation
+#   https://docformatter.readthedocs.io/en/stable/configuration.html#a-note-on-options-to-control-styles
+black = true
 wrap-descriptions = 119
 wrap-summaries = 119
 
-[tool.isort]
-# see:
-# - Using Black with other tools - Black 23.1.0 documentation
-#   https://black.readthedocs.io/en/stable/guides/using_black_with_other_tools.html#custom-configuration
-multi_line_output = 3
-include_trailing_comma = true
-force_grid_wrap = 0
-use_parentheses = true
-ensure_newline_before_comments = true
-line_length = 119
-# For compatibility with PyLint and Hacking, Google also supports, 
-# Black doesn't have any opinions
-# see:
-# - https://pycqa.github.io/isort/docs/configuration/profiles.html
-# - https://qiita.com/kaityo256/items/5b0b55d105ef2366cb0c
-# - https://www.xn--ebkc7kqd.com/entry/hacking-isort
-force_sort_within_sections = true
-lexicographical = true
-# Google supports, Black doesn't have any opinions
-# see: https://pycqa.github.io/isort/docs/configuration/profiles.html
-order_by_type = false
+[tool.flake8]
+# flake8-bugbear B950 reports lines exceeding max_line_length by more than 10%.
+# Black recommends 88 without bugbear and 80 with it,
+# so following that ratio, a line length of 119 corresponds to 109:
+# - PyCQA/flake8-bugbear: A plugin for Flake8 finding likely bugs and design problems in your program.
+#   https://github.com/PyCQA/flake8-bugbear?tab=readme-ov-file#opinionated-warnings
+# - Using Black with other tools - Black 25.1.0 documentation
+#   https://black.readthedocs.io/en/stable/guides/using_black_with_other_tools.html#bugbear
+max_line_length = 109
+# B9 (opinionated) warnings of flake8-bugbear are disabled by default,
+# so they must be enabled explicitly (B950 checks line length instead of E501):
+# - PyCQA/flake8-bugbear: A plugin for Flake8 finding likely bugs and design problems in your program.
+#   https://github.com/pycqa/flake8-bugbear#how-to-enable-opinionated-warnings
+extend_select = [
+  "B9",
+]
+# To allow Claude Code to run Flake8 in its sandbox,
+# which denies creating the Unix socket required by multiprocessing for parallel jobs:
+#   File ".../multiprocessing/forkserver.py", line 187, in ensure_running
+#     with socket.socket(socket.AF_UNIX) as listener:
+#   File ".../socket.py", line 237, in __init__
+#     _socket.socket.__init__(self, family, type, proto, fileno)
+# PermissionError: [Errno 1] Operation not permitted
+jobs = 1
+extend_ignore = [
+  # For compatibility with Black:
+  # - Using Black with other tools - Black 25.1.0 documentation
+  #   https://black.readthedocs.io/en/stable/guides/using_black_with_other_tools.html#bugbear
+  "E203",
+  "E501",
+  "E701",
+  # 2025-05-24 Now openstack/hacking wasn't introduced into Ruff and sorting imports is mainly considered with isort.
+  "H306",
+  # Cohesion may be in experimental.
+  "H601",
+]
+statistics = true
+show_source = true
+exclude = [
+  ".venv",
+]
 
 [tool.mypy]
 strict = true
 
-[tool.pydocstyle]
-# To add Google convention
-# see:
-# - Error Codes — pydocstyle 6.1.1 documentation
-#   http://www.pydocstyle.org/en/stable/error_codes.html#default-conventions
-add_select = ["D212", "D214", "D410", "D411", "D415", "D416", "D417"]
-# D400: First line may ends with ":" for expression.
-# D402: First line may ends with function signature for expression.
-# D415: First line may ends with ":" for expression.
-# D101: Docstring may be missed in public class since docstring-min-length is set.
-# D102: Docstring may be missed in public method since docstring-min-length is set.
-# D103: Docstring may be missed in public function since docstring-min-length is set.
-# D105: Docstring may be missed in magic method since docstring-min-length is set.
-# D105: Docstring may be missed in public nested class since docstring-min-length is set.
-# D107: Docstring may be missed in __init__ method since docstring-min-length is set.
-add_ignore = ["D400", "D401", "D402", "D415", "D101", "D102", "D103", "D105", "D106", "D107"]
+[tool.pylint]
+disable = [
+    # We check line length by flake8-bugbear B950.
+    "line-too-long",
+]
 
 [tool.pylint.basic]
 docstring-min-length = "7"
@@ -183,7 +164,8 @@ max-line-length = 119
 
 [tool.pylint.options]
 # Since this rule against single responsibility principle.
-# @see https://stackoverflow.com/questions/28722314/why-does-pylint-want-2-public-methods-per-class/40258006#40258006
+# - python - Why does Pylint want two public methods per class? - Stack Overflow
+#   https://stackoverflow.com/a/40258006/12721873
 min-public-methods = "1"
 
 [tool.pytest.ini_options]
@@ -193,68 +175,65 @@ markers = [
 
 [tool.ruff]
 line-length = 119
+
+[tool.ruff.lint]
+# Avoiding flagging (and removing) any codes starting with `H` from any
+# `# noqa` directives, despite Ruff's lack of support for `hacking`.
+# - Long import statement violates flake8: H301: one import per line · Issue #1220 · psf/black
+#   https://github.com/psf/black/issues/1220#issuecomment-570970250
+# - Bug #2123810 “H301 with long line” : Bugs : hacking
+#   https://bugs.launchpad.net/hacking/+bug/2123810
+external = [
+    # Flake8-Bugbear rules that are preview-only in Ruff aren't run with Ruff's default settings,
+    # so list them to prevent Ruff from judging `# noqa` markers needed for Flake8 as unused.
+    "B043",  # Do not call `delattr` with a constant attribute value
+    "B901",  # Using `yield` and `return {value}` in a generator function can lead to confusing behavior
+    "B903",  # Class could be dataclass or namedtuple
+    "B909",  # Mutation to loop iterable `{name}` during iteration
+    # Not implemented in Ruff; only Flake8-Bugbear detects it.
+    "B950",  # Line too long
+    "DUO",  # dlint
+    "H",  # Openstack/hacking
+]
 select = [
-    "F",  # Pyflakes
-    "E",  # pycodestyle
-    "W",  # pycodestyle
-    "C90",  # mccabe
-    # "I",  # isort
-    "N",  # pep8-naming
-    # "D",  # pydocstyle
-    "UP",  # pyupgrade
-    "YTT",  # flake8-2020
-    "ANN",  # flake8-annotations
-    "S",  # flake8-bandit
-    "BLE",  # flake8-blind-except
-    "FBT",  # flake8-boolean-trap
-    "B",  # flake8-bugbear
-    "A",  # flake8-builtins
-    "COM",  # flake8-commas
-    "C4",  # flake8-comprehensions
-    "DTZ",  # flake8-datetimez
-    "T10",  # flake8-debugger
-    "DJ",  # flake8-django
-    "EM",  # flake8-errmsg
-    "EXE",  # flake8-executable
-    "ISC",  # flake8-implicit-str-concat
-    "ICN",  # flake8-import-conventions
-    "G",  # flake8-logging-format
-    "INP",  # flake8-no-pep420
-    "PIE",  # flake8-pie
-    "T20",  # flake8-print
-    "PYI",  # flake8-pyi
-    "PT",  # flake8-pytest-style
-    "Q",  # flake8-quotes
-    "RSE",  # flake8-raise
-    "RET",  # flake8-return
-    "SLF",  # flake8-self
-    "SIM",  # flake8-simplify
-    "TID",  # flake8-tidy-imports
-    "TCH",  # flake8-type-checking
-    "ARG",  # flake8-unused-arguments
-    "PTH",  # flake8-use-pathlib
-    "ERA",  # eradicate
-    "PD",  # pandas-vet
-    "PGH",  # pygrep-hooks
-    "PL",  # Pylint
-    "TRY",  # tryceratops
-    "NPY",  # NumPy-specific rules
-    "RUF",  # Ruff-specific rules
+    "ALL",
+    # Compatible with PEP 257 and checkable by Ruff, so there's no need to think about it further:
+    # - Python の関数 docstring 1 行目は命令形にするべき？ (ruff / pydocstyle D401)
+    #   https://zenn.dev/y_shinoda/articles/pydocstyle-d401
+    "D401",  # First line should be in imperative mood
 ]
 ignore = [
-    "UP032",  # [*] Use f-string instead of `format` call
-    "ANN101",  # Missing type annotation for `self` in method
-    "ANN401",  # Dynamically typed expressions (typing.Any) are disallowed, These warnings are disabled by default
+    # lint.pydocstyle
+    # Reason: Docstring may be missed since docstring-min-length is set.
+    "D101",    # Missing docstring in public class
+    "D102",    # Missing docstring in public method
+    "D103",    # Missing docstring in public function
+    "D105",    # Missing docstring in magic method
+    "D106",    # Missing docstring in public nested class
+    "D107",    # Missing docstring in __init__
+    # Reason: First line may ends with function signature for expression.
+    "D402",    # First line should not be the function’s “signature”
+    # Reason: First line may ends with ":" for expression.
+    "D415",    # First line should end with a period, question mark, or exclamation point
+    # Reason: `Line too long` is checked by flake8-bugbear.
+    "E501",    # Line too long ({width} > {limit})
 ]
-fixable = [
-    "COM812",  # Trailing comma missing
-    "PT001",  # Use `@pytest.fixture()` over `@pytest.fixture`
-    "PT006",  # Wrong name(s) type in `@pytest.mark.parametrize`, expected `tuple`
-    "SIM108",  # Use ternary operator `extra_context = {} if extra_context is None else request.param` instead of `if`-`else`-block
-    "UP015",  # Unnecessary open mode parameters
-    "UP037",  # Remove quotes from type annotation
+unfixable = [
+    # When fix `return a and b != ""` as `return a and b`, mypy will report warning:
+    #   error: Incompatible return value type (got "Union[Literal[False], str]", expected "bool")  [return-value]
+    "PLC1901",
 ]
-target-version = "py37"
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.isort]
+force-single-line = true
+
+[tool.ruff.lint.mccabe]
+# The default value: 10 is too loose,
+# 5 is as same as the default value of Radon for A rank that we use without any problems for a decade.
+max-complexity = 5
+
+[tool.ruff.lint.per-file-ignores]
 "tests/*" = ["S101"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

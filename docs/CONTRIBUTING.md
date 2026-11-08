@@ -72,13 +72,19 @@ Ready to contribute? Here's how to set up `Classify AWSets JSON by Region` for l
    Now you can make your changes locally.
 
 5. When you're done making changes,
-   check that your changes pass isort, flake8, black,
-   and the tests, including testing oldest Python version:
+   check that your changes pass all of the following checks,
+   which [Invoke Lint](https://github.com/yukihiko-shinoda/invoke-lint) runs:
+
+   - Formatting
+   - Linting
+   - Tests, including on the oldest supported Python version
 
    ```console
    uv run inv style --check
-   uv run pytest
-   uv run --python 3.7 pytest
+   uv run inv lint
+   uv run inv lint.deep
+   uv run inv test
+   uv run --python 3.7 inv test
    ```
 
 6. Commit your changes and push your branch to GitHub:

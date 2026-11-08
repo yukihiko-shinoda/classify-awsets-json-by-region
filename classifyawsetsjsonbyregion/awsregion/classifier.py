@@ -1,4 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2023 Yukihiko Shinoda
+# SPDX-License-Identifier: MIT
 """Classifies AWSets into each regions."""
+
 from __future__ import annotations
 
 from typing import TYPE_CHECKING

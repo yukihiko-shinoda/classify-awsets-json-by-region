@@ -1,4 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2023 Yukihiko Shinoda
+# SPDX-License-Identifier: MIT
 """Console script for classifyawsetsjsonbyregion."""
+
 import sys
 
 import click

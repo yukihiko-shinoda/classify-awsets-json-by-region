@@ -1,4 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2023 Yukihiko Shinoda
+# SPDX-License-Identifier: MIT
 """Tests for `classifyawsetsjsonbyregion` package."""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -39,17 +42,14 @@ def test_command_line_interface(configured_cli_runner: CliRunner) -> None:
     }
     result = configured_cli_runner.invoke(cli.main)
     # Reason: Check that output is empty.
-    assert result.output == ""  # noqa: PLC1901
+    assert result.output == ""
     assert result.exit_code == 0
     list_output_file = list((Path.cwd() / "output").iterdir())
     assert_output_files(expected, list_output_file)
 
 
 def assert_output_files(expected: dict[str, str], list_output_file: list[Path]) -> None:
-    assert len(list_output_file) == len(expected)
-    for output_file, (expected_file_name, expected_json) in zip(sorted(list_output_file), expected.items()):
-        assert output_file.name == expected_file_name
-        assert output_file.read_text() == expected_json
+    assert {output_file.name: output_file.read_text() for output_file in list_output_file} == expected
 
 
 def test_help() -> None:
